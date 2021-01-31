@@ -9,6 +9,13 @@ public class BankAccount {
     private String type;
     private double balance;
 
+    public BankAccount(int id, int customerId, String type, double balance) {
+        this.id = id;
+        this.customerId = customerId;
+        this.type = type;
+        this.balance = balance;
+    }
+
     public int getId() {
         return id;
     }
@@ -41,6 +48,14 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    public void deposit(double amount){
+        this.balance += amount;
+    }
+
+    public void withdraw(double amount){
+        this.balance -= amount;
+    }
+
     @Override
     public String toString() {
         return "BankAccount{" +
@@ -51,3 +66,4 @@ public class BankAccount {
                 '}';
     }
 }
+
